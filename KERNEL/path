@@ -1,3 +1,1 @@
-KERNEL_DIR=/home/senthil360/Setup_kernel-build/KERNEL/android_kernel_dir
-TC_DIR=/home/senthil360/Setup_kernel-build/KERNEL/toolchain/gcc-whatever-example
-AK_DIR=/home/senthil360/Setup_kernel-build/KERNEL/AnyKernel2
+#Used by script for storing values
