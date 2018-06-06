@@ -20,18 +20,18 @@ list=$(realpath $(find -maxdepth 2 -name "android_kernel*"))
 sleep 0.2
 LIM=$(echo $list | wc -w)
 echo " "
-echo "${C}Choose working${N} ${BR}kernel${N} ${C}directory${N} ${G}[1-$LIM]${N}"
+echo -e "${C}Choose working${N} ${BR}kernel${N} ${C}directory${N} ${G}[1-$LIM]${N}"
 space
 a=1;
 for i in $list; do 
-    echo "${C}$a${N} - ${R}$i${N}"
+    echo -e "${C}$a${N} - ${R}$i${N}"
     a=$((a+1))
 done
 space
 read -p "Option : " optionk
 selection_kernel=$(echo $list | cut -d ' ' -f$optionk)
 echo " "
-echo "${C}Selected${N} : ${G}$selection_kernel${N}"
+echo -e "${C}Selected${N} : ${G}$selection_kernel${N}"
 echo " "
 unset list; unset LIM; unset a;
 }
@@ -41,18 +41,18 @@ cd toolchain
 list=$(realpath $(ls))
 LIM=$(echo $list | wc -w)
 echo " "
-echo "${C}Choose${N} ${R}TOOLCHAIN${N} ${C}directory${N} ${G}[1-$LIM]${N}"
+echo -e "${C}Choose${N} ${R}TOOLCHAIN${N} ${C}directory${N} ${G}[1-$LIM]${N}"
 space
 a=1;
 for i in $list; do 
-    echo "${C}$a${N} - ${R}$i${N}"
+    echo -e "${C}$a${N} - ${R}$i${N}"
     a=$((a+1))
 done
 space
 read -p "Option : " optiontc
 selection_tc=$(echo $list | cut -d ' ' -f$optiontc)
 echo " "
-echo "${C}Selected${N} : ${G}$selection_tc${N}"
+echo -e "${C}Selected${N} : ${G}$selection_tc${N}"
 echo " "
 unset list; unset LIM; unset a;
 cd ..
@@ -62,7 +62,7 @@ set_AKdir() {
    ak=0
    if [ -d "AnyKernel2" ]; then
       echo " "
-      echo "${C}Do you want to set the following directory as AnyKernel directory?${N}"
+      echo -e "${C}Do you want to set the following directory as AnyKernel directory?${N}"
       space
       path=$(realpath "AnyKernel2" | grep "AnyKernel" | head -n 1)
       echo $path
@@ -71,7 +71,7 @@ set_AKdir() {
       if [ "$optionak" = "Y" ] || [ "$optionak" = "y" ]; then
          ak=1
          selection_anykernel=$path
-         echo "Selected ${G}$selection_anykernel${N}"
+         echo -e "Selected ${G}$selection_anykernel${N}"
       fi
    fi
 }
@@ -79,12 +79,12 @@ set_AKdir() {
 review_sel() {
    clear;
    space
-   echo "Kernel Directory : ${B}$selection_kernel${N}"
+   echo -e "Kernel Directory : ${B}$selection_kernel${N}"
    echo " "
-   echo "Toolchain Directory : ${B}$selection_tc${N}"
+   echo -e "Toolchain Directory : ${B}$selection_tc${N}"
    if [ "$ak" -eq 1 ]; then
       echo " "
-      echo "Anykernel Directory : ${B}$selection_anykernel${N}"
+      echo -e "Anykernel Directory : ${B}$selection_anykernel${N}"
    fi
    space
 }
