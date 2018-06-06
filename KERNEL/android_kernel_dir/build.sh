@@ -24,14 +24,14 @@ sleep 1
 # VARS #### EDIT AS NEEDED ###
 export ARCH=arm64                                               
 export SUBARCH=arm64
-export KBUILD_BUILD_USER=Senthil360
-export KBUILD_BUILD_HOST=BackBoX
+export KBUILD_BUILD_USER=Your_cool_username_XD
+export KBUILD_BUILD_HOST=Black_Hole
 
 # Kernel Details ### EDIT AS NEEDED ###
 KERNEL_NAME="Nameless"
 VER="v0.1"
 VER="-$(date +"%Y%m%d"-"%H%M%S")-$VER"
-DEVICE="-oneplus3"
+DEVICE="Your_Device"
 FINAL_VER="${KERNEL_NAME}""${DEVICE}""${VER}"
 
 
@@ -45,12 +45,12 @@ restore='\033[0m'
 
 clear
 
-# Resources
+# Resources ##EDIT DEFCONFIG##
 THREAD="-j$(($(nproc --all) * 2))"
-DEFCONFIG="oneplus3_defconfig"
+DEFCONFIG="your_device_defconfig"
 KERNEL="Image.gz-dtb"
 
-# PATHS - THESE STAY THE SAME
+# PATHS - THESE STAY THE SAME - DO NOT CHANGE
 WORKING_DIR="$(cat $path | head -n 1 | tail -n 1 | cut -d '=' -f2)"
 ANYKERNEL_DIR="$(cat $path | head -n 3 | tail -n 1 | cut -d '=' -f2)"
 TOOLCHAIN_DIR="$(cat $path | head -n 2 | tail -n 1 | cut -d '=' -f2)"
@@ -78,8 +78,8 @@ make_zip() {
 
 
 push_and_flash() {
-  adb push "${ZIP_MOVE}"/${FINAL_VER}.zip /sdcard/Nameless/
-  adb shell twrp install "/sdcard/Nameless/${FINAL_VER}.zip"
+  adb push "${ZIP_MOVE}"/${FINAL_VER}.zip /sdcard/$KERNEL_NAME/
+  adb shell twrp install "/sdcard/$KERNEL_NAME/${FINAL_VER}.zip"
 }
 
 
