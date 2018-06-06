@@ -1,4 +1,7 @@
 #!/bin/bash
+#Kernel environment setup script - Senthil360 @XDA-developers
+#Under GPL V3 - Feel free to edit, free as in freedom
+
 #colors
 G='\033[01;32m'
 R='\033[01;31m'

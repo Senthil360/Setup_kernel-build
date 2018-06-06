@@ -1,6 +1,7 @@
 #!/bin/bash
 #Kernel build script - Senthil360 @XDA-developers
 #Thanks to MSF-Jarvis for template
+#Under GPL V3 - Feel free to edit, free as in freedom
 
 rm .version 2>/dev/null
 path="$HOME/Setup_kernel-build/KERNEL/path"
@@ -22,8 +23,10 @@ fi
 sleep 1
 
 # VARS #### EDIT AS NEEDED ###
-export ARCH=arm64                                               
+export ARCH=arm64                                  
 export SUBARCH=arm64
+export ANDROID_MAJOR_VERSION=o
+export PLATFORM_VERSION=8.0.0
 export KBUILD_BUILD_USER=Your_cool_username_XD
 export KBUILD_BUILD_HOST=Black_Hole
 
